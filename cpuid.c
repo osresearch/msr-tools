@@ -119,11 +119,12 @@ static void dump_cpuid_leaf(int cpu, uint32_t leaf)
 		case 0xb:
 			if ((lvl.ecx & ~0xff) == 0)
 				return;
-
+			// Fallthrough
 		case 0xd:
 			if ((lvl.eax | lvl.ebx | lvl.ecx | lvl.edx) == 0)
 				return;
 
+			// Fallthrough
 		default:
 			/* Generic, anticipatory rules */
 			/* Exclude ecx here for levels which return the initial ecx value */

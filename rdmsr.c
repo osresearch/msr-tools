@@ -337,7 +337,7 @@ void rdmsr_on_cpu(uint32_t reg, int cpu)
 	case mo_raw | mo_fill | mo_c:
 		{
 			unsigned char *p = (unsigned char *)&data;
-			int i;
+			size_t i;
 			for (i = 0; i < sizeof data; i++) {
 				printf("%s0x%02x", i ? "," : "{",
 				       (unsigned int)(*p++));
